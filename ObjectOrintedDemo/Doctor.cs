@@ -9,10 +9,13 @@ namespace objectorintedDemo
     internal class Doctor
     {
         public int Id { get; set; }
+
         public string Name { get; set; }    
 
         public int GrossIncome { get; set; }
+
         public int IncomeTax { get; set; }
+
         public int NetIncome { get; set; }
         
 
@@ -30,7 +33,10 @@ namespace objectorintedDemo
 
             Console.WriteLine("Please enter the value for IncomeTax");
             IncomeTax= Convert.ToInt32(Console.ReadLine());
-        }
+
+            NetIncome = CalculateNetIncome();
+        }   
+
 
         // non value returing function .(without return type)
         public void putData()
@@ -42,8 +48,13 @@ namespace objectorintedDemo
             Console.WriteLine("NetIncome="+NetIncome);
         }
 
+        // value return method
+        public int CalculateNetIncome()
+        {
+            int result = GrossIncome - IncomeTax;
 
-
+            return result;
+        }
 
         #region Type casing demo
         // Type casting demo
