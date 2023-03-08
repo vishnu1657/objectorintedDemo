@@ -9,20 +9,49 @@ namespace objectorintedDemo
     internal class Doctor
     {
         public int Id { get; set; }
-        public string strId { get; set; }
-
-        public char charId { get; set; }
         public string Name { get; set; }    
 
         public int GrossIncome { get; set; }
         public int IncomeTax { get; set; }
         public int NetIncome { get; set; }
-        public int netIncome;
+        
+
+        // Non Value returing function
+        public void Getdata()
+        {
+            Console.WriteLine("Please enter the value for Id");
+            Id = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Please enter the value for Name");
+            Name = Console.ReadLine();
+
+            Console.WriteLine("Please enter the value for GrossIncome");
+            GrossIncome = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Please enter the value for IncomeTax");
+            IncomeTax= Convert.ToInt32(Console.ReadLine());
+        }
+
+        // non value returing function .(without return type)
+        public void putData()
+        {
+            Console.WriteLine("Id=" + Id);
+            Console.WriteLine("Name ="+ Name);
+            Console.WriteLine("GrossIncome ="+ GrossIncome);
+            Console.WriteLine("IncomeTax ="+ IncomeTax);
+            Console.WriteLine("NetIncome="+NetIncome);
+        }
 
 
-        public static int xyz { get; set; } 
 
-        public static void CalculateNetIncome1()
+
+        #region Type casing demo
+        // Type casting demo
+        public string strId { get; set; }
+
+        public char charId { get; set; }
+
+        public static void TypeCastingDemo()
         {   
 
             Doctor doctor = new Doctor();
@@ -35,17 +64,8 @@ namespace objectorintedDemo
 
 
         }
+        #endregion
 
-        public static void CalculateNetIncome2()
-        {
-
-        }
-
-        public void NonStaticFunction()
-        {
-            xyz = 0;
-            NetIncome = 4;
-        }
 
 
     }
